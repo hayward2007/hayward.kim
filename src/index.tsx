@@ -11,6 +11,8 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 //pages
 import Main from './pages/main/main';
+import Blog from './pages/blog/blog';
+import Portfolio from './pages/portfolio/portfolio';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -26,17 +28,18 @@ root.render(
 function Index() {
 const location = useLocation();
   return <>
-    <div style={{height: 95}}></div>
     <TransitionGroup>
         <CSSTransition className="fade" timeout={300} key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<Navigate to="/main"/>}/>
             <Route path="/main" element={<Main/>}/>
+            <Route path="/blog" element={<Blog/>}/>
+            <Route path="/portfolio" element={<Portfolio/>}/>
           </Routes>
         </CSSTransition>
       </TransitionGroup>
     <Footer />
-    <NavBar/>
+    {/* <NavBar/> */}
   </>;
 }
 
