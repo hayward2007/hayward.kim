@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+div {
+  position: relative;
+}
+
 .column {
   display: flex;
   flex-direction: column;
