@@ -1,14 +1,16 @@
+@import url('./components/font/SUIT.css');
+
 * {
   padding: 0px;
   margin: 0px;
+  text-align: center;
+  font-family: 'SUIT';
   overscroll-behavior: none;
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
   ::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라 브라우저 */
   }
-  font-family: 'SUIT';
-  text-align: center;
 }
 
 div {
