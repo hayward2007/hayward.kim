@@ -1,23 +1,9 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import Spline from "@splinetool/react-spline";
 
 import style from "./main.module.css";
 
 export default function Main() {
-	const [scrollPosition, setScrollPosition] = useState(0);
-	const handleScroll = () => {
-		const position = window.scrollY;
-		// console.log(position, window.innerHeight);
-		setScrollPosition(position);
-	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll, { passive: true });
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
 
 	const TextRing = (text: string) => {
 		const CHARS = text.split('')
@@ -37,12 +23,17 @@ export default function Main() {
 	  
 	return (
 	<>	
-		{/* 메인 페이지 타이틀 */}
 		<div className={`${style.content} row center`} >
-			<Spline className={style.spline} scene="https://prod.spline.design/ukmm6q-uTyxjpejj/scene.splinecode" />
-			{/* <div className="row" style={{position: 'fixed', top: 0}}>
-				<div className={style.bar}>HAYWARD_KIM</div>
-			</div> */}
+			<Spline className={style.spline} style={{width: '30vw', height: '30vw'}} scene="https://prod.spline.design/uawC84Q1PaFk1Izt/scene.splinecode" />
+			<span className={`${style.circle} ${style.inner}`}>
+				{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
+			</span>
+			<span className={`${style.circle} ${style.middle}`}>
+				{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
+			</span>
+			<span className={`${style.circle} ${style.outer}`}>
+				{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
+			</span>
 
 			<div className={`${style.frame} column start`}>
 				<h2 className={style.slidein_animation}>방구석 개발자,</h2>
@@ -56,15 +47,10 @@ export default function Main() {
 					</div>
 				</div>
 			</div>
-
-			<div className={style.learn} onClick={() => {
-				window.scroll({top: window.innerHeight, behavior: 'smooth'});
-			}}>
-				더 알아보기
-			</div>
 		</div>
+
 		{/* 메인 페이지 소개 */}
-		<div className={`${style.content}`}>
+		{/* <div className={`${style.content}`}>
 			{
 				scrollPosition === window.innerHeight ?
 				<>
@@ -95,7 +81,7 @@ export default function Main() {
 			<span className={`${style.circle} ${style.outer}`}>
 				{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
 			</span>
-		</div>
+		</div> */}
 
 	</>
 	

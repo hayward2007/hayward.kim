@@ -6,9 +6,6 @@ import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-route
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 //css
 import './index.css';
-//components
-// import NavBar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
 //pages
 import Main from './pages/main/main';
 import Blog from './pages/blog/blog';
@@ -38,8 +35,6 @@ const location = useLocation();
           </Routes>
         </CSSTransition>
       </TransitionGroup>
-    <Footer />
-    {/* <NavBar/> */}
   </>;
 }
 
