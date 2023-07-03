@@ -7,7 +7,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 //css
 import './index.css';
 //components
-import NavBar from './components/navbar/navbar';
+// import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 //pages
 import Main from './pages/main/main';

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import Spline from "@splinetool/react-spline";
 
 import style from "./main.module.css";
@@ -26,8 +26,8 @@ export default function Main() {
 				</div>
 			</div>
 
-			<div className={style.learn} onClick={async () => {
-				await window.scroll({top: window.innerHeight, behavior: 'smooth'});
+			<div className={style.learn} onClick={() => {
+				window.scroll({top: window.innerHeight, behavior: 'smooth'});
 			}}>
 				더 알아보기
 			</div>
