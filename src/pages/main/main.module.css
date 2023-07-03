@@ -1,16 +1,3 @@
-.bar {
-    top: 0px;
-    left: 0px;
-    color: white;
-    font-size: 1rem;
-    z-index: 1;
-    animation-name: slide;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
 @keyframes slide {
     0% {
         transform: translateX(-100%);
@@ -25,6 +12,7 @@
     width: auto;
     background-color: black;
     padding: 50px;
+    overflow: hidden;
 }
 
 .content .frame {
@@ -55,6 +43,14 @@
     white-space: nowrap;
 }
 
+.slidein_animation {
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transform: translate(-150%);
+    animation-fill-mode: forwards;
+}
+
 @keyframes slide-in {
     0% {
         transform: translateX(-150%);
@@ -64,19 +60,10 @@
     }
 }
 
-
 .content h2 {
     color: white;
     margin-left: 1vw;
     font-size: 2vw;
-}
-
-.slidein_animation {
-    animation-name: slide-in;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    transform: translate(-150%);
-    animation-fill-mode: forwards;
 }
 
 .spline {
@@ -154,5 +141,127 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    user-select: none;
+}
+
+.inner {
+    animation-duration: 30s;
+    font-weight: bold;
+}
+
+.middle {
+    animation-direction: reverse;
+    animation-duration: 45s;
+}
+
+.outer {
+    animation-duration: 90s;
+    font-weight: 100;
+}
+
+.text_ring {
+    position: relative;
+    color: white;
+}
+
+.inner .text_ring [style*=--index] {
+    -webkit-filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
+    filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
+}
+
+.text_ring [style*=--index] {
+    font-size: min(1.5vw, 24px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:
+    translate(-50%, -50%)
+    rotate(calc(360deg / var(--total) * var(--index)))
+    translateY(calc(var(--radius, 5) * -1ch));
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content .left {
+    height: 90vh;
+    margin-left: 4vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .right {
+    height: 90vh;
+    margin-right: 4vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content div h1 {
+    color: white;
+    font-size: 10vw;
+    font-weight: 800;
+    -webkit-filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
+    filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
+}
+
+.content .left h1 {
+    transform: translateX(-200%);
+    animation-name: slide-in-left;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.content .right h1 {
+    transform: translateX(200%);
+    animation-name: slide-in-right;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
