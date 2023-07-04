@@ -1,7 +1,9 @@
 // import React from "react";
 import Spline from "@splinetool/react-spline";
 import style from "./index.module.css";
+import logo from "../assets/images/LOGO.png";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Main() {
 
