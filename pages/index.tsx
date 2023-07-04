@@ -1,41 +1,44 @@
 // import React from "react";
 import Spline from "@splinetool/react-spline";
 import style from "./index.module.css";
-import logo from "../assets/images/LOGO.png";
 import Link from "next/link";
-import Head from "next/head";
+import Image from 'next/image'
+import { useEffect } from "react";
 
 export default function Main() {
+	// const [width, setWidth] = useState(window.innerWidth);
 
-	const TextRing = (text: string) => {
+	const TextRing = (text: string, size: string) => {
 		const CHARS = text.split('')
 		const INNER_ANGLE = 360 / CHARS.length
 		const RADIUS = 2;
+
 		return (
-		  <span className={style.text_ring} style={{ '--total': CHARS.length, '--radius': RADIUS / Math.sin(INNER_ANGLE / (180 / Math.PI)) } as React.CSSProperties}>
+		  <svg className={style.text_ring} height={size} width={size} style={{ '--total': CHARS.length, '--radius': RADIUS / Math.sin(INNER_ANGLE / (180 / Math.PI)) } as React.CSSProperties}>
 			{CHARS.map((char, index) => (
-			  <span key={index} style={{'--index': index } as React.CSSProperties}>
+			  <text key={index} fill="white" style={{'--index': index } as React.CSSProperties}>
 				{char}
-			  </span>
+			  </text>
 			))}
-		  </span>
+		  </svg>
 		)
 	  }
+	  
 
 	  
 	return (
 		<>	
 			<div className={`${style.content} row center`} >
 				<Spline className={style.spline} style={{width: 'min(30vw, 500px)', height: 'min(30vw, 500px)'}} scene="https://prod.spline.design/uawC84Q1PaFk1Izt/scene.splinecode" />
-				<span className={`${style.circle} ${style.inner}`}>
-					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
-				</span>
-				<span className={`${style.circle} ${style.middle}`}>
-					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
-				</span>
-				<span className={`${style.circle} ${style.outer}`}>
-					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
-				</span>
+				<div className={`${style.circle} ${style.inner}`}>
+					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ", "max(30vw, 300px)") }
+				</div>
+				<div className={`${style.circle} ${style.middle}`}>
+					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ", "max(50vw, 500px)") }
+				</div>
+				<div className={`${style.circle} ${style.outer}`}>
+					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ", "max(80vw, 800px)") }
+				</div>
 
 				<div className={`${style.frame} column start`}>
 					<h2 className={style.slidein_animation}>방구석 개발자,</h2>
