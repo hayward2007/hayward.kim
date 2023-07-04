@@ -24,7 +24,7 @@ export default function Main() {
 	return (
 		<>	
 			<div className={`${style.content} row center`} >
-				<Spline className={style.spline} style={{width: '30vw', height: '30vw'}} scene="https://prod.spline.design/uawC84Q1PaFk1Izt/scene.splinecode" />
+				<Spline className={style.spline} style={{width: 'min(30vw, 500px)', height: 'min(30vw, 500px)'}} scene="https://prod.spline.design/uawC84Q1PaFk1Izt/scene.splinecode" />
 				<span className={`${style.circle} ${style.inner}`}>
 					{ TextRing("HAYWARD_KIM   HAYWARD_KIM   HAYWARD_KIM   ") }
 				</span>
