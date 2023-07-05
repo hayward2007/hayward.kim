@@ -8,9 +8,8 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>HAYWARD_KIM</title>
-        <link rel="icon" href="/LOGO.png" />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 };

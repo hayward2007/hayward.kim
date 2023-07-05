@@ -26,7 +26,7 @@
     content: "김형석";
     -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
     filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
-    overflow: hidden;
+    overflow: visible;
     position: absolute;
     white-space: nowrap;
 }
@@ -62,7 +62,7 @@
 
     opacity: 0;
     animation-name: fade-in;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -104,6 +104,14 @@
 }
 
 .content svg {
+    overflow: visible;
+
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
     position: absolute;
     left: 50%;
     top: 50%;
@@ -142,18 +150,18 @@
     color: white;
 }
 
-.inner .text_ring [style*=--index] {
-    -webkit-filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
-    filter: drop-shadow(0 0 20px white) drop-shadow(0 0 200px white);
-}
+/* .inner .text_ring [style*=--index] {
+    -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+    filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+} */
 
 .text_ring [style*=--index] {
     font-size: min(1.5vw, 24px);
     position: absolute;
     transform:
-    translate(50%, 50%)
-    rotate(calc(360deg / var(--total) * var(--index)))
-    translateY(calc(var(--radius, 5) * -1ch));
+        translate(50%, 50%)
+        rotate(calc(360deg / var(--total) * var(--index)))
+        translateY(calc(var(--radius, 5) * -1ch));
 }
 
 @keyframes rotate {

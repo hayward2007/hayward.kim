@@ -14,7 +14,8 @@ export default function Main() {
 		const RADIUS = 2;
 
 		return (
-		  <svg className={style.text_ring} height={size} width={size} style={{ '--total': CHARS.length, '--radius': RADIUS / Math.sin(INNER_ANGLE / (180 / Math.PI)) } as React.CSSProperties}>
+			<svg className={style.text_ring} style={{ '--total': CHARS.length, '--radius': RADIUS / Math.sin(INNER_ANGLE / (180 / Math.PI)), 'width': size, 'height': size } as React.CSSProperties}>
+			{/* <svg className={style.text_ring} height={size} width={size} style={{ '--total': CHARS.length, '--radius': RADIUS / Math.sin(INNER_ANGLE / (180 / Math.PI)) } as React.CSSProperties}> */}
 			{CHARS.map((char, index) => (
 			  <text key={index} fill="white" style={{'--index': index } as React.CSSProperties}>
 				{char}

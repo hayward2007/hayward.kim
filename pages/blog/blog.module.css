@@ -1,0 +1,89 @@
+.title {
+    user-select: none;
+    color: white;
+    font-size: 5vw;
+    font-weight: bold;
+    position: absolute;
+    left: 2vw;
+    top: 2vh;
+    -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+    filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+}
+
+.title div {
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transform: translateY(-150%);
+    animation-fill-mode: forwards;
+
+    scale: 1;
+    transition-property: scale;
+    transition-duration: 0.5s;
+}
+
+.title div:hover {
+    scale: 1.1;
+}
+
+.title .back {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-delay: 0.8s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    margin-left: 1vw;
+    width: 2vw;
+    height: 5vw;
+    background-color: white;
+    color: black;
+    transition-property: width;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.title .back:hover {
+    width: 10vw;
+}
+
+.title .back div {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition-property: opacity, font-size;
+    transition-duration: 0.3s;
+    font-size: 0.5vw;
+    font-weight: normal;
+}
+
+.title .back div:hover {
+    transition-delay: 0s;
+    opacity: 1;
+    font-size: 1vw;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-150%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
