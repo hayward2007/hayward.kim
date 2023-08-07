@@ -2,11 +2,8 @@
 import Spline from "@splinetool/react-spline";
 import style from "./index.module.css";
 import Link from "next/link";
-import Image from 'next/image'
-import { useEffect } from "react";
 
 export default function Main() {
-	// const [width, setWidth] = useState(window.innerWidth);
 
 	const TextRing = (text: string, size: string) => {
 		const CHARS = text.split('')
@@ -22,7 +19,7 @@ export default function Main() {
 			  </text>
 			))}
 		  </svg>
-		)
+		);
 	  }
 	  
 
@@ -53,6 +50,8 @@ export default function Main() {
 						</div>
 					</div>
 				</div>
+	            <a className={style.love} href="/love"/>
+
 			</div>
 		</>
 	);

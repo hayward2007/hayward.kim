@@ -172,3 +172,11 @@
         transform: rotate(360deg);
     }
 }
+
+.love { 
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 50px;
+    width: 100px;
+}

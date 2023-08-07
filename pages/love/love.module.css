@@ -1,0 +1,176 @@
+.content {
+    height: calc(100vh - 100px);
+    width: auto;
+    background: linear-gradient(to right, blue, pink);
+    padding: 50px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.content .frame {
+    width: 50%;
+    height: 25vh;
+}
+
+.content .title {
+    font-weight: bold;
+    color: white;
+    font-size: 10vw;
+    animation-delay: 0.5s;
+    position: absolute;
+
+}
+
+.content .title:before {
+    /* -webkit-animation: animate 10s ease-out 1; */
+    /* animation: animate 10s ease-out 1; */
+    color: white;
+    content: "YOU";
+    -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+    filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+    overflow: visible;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.slidein_animation {
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transform: translate(-150%);
+    animation-fill-mode: forwards;
+}
+
+/* @keyframes slide-in {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+} */
+
+.content h2 {
+    color: white;
+    margin-left: 1vw;
+    font-size: 2vw;
+}
+
+.spline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    animation-name: fade-in;
+    animation-delay: 1.5s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.button {
+    user-select: none;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.2vw;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    border: solid 1px white;
+    text-decoration: none;
+    color: black;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+} 
+
+.button:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.content svg {
+    overflow: visible;
+
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    user-select: none;
+}
+
+.inner {
+    animation-duration: 30s;
+    font-weight: bold;
+}
+
+.middle {
+    animation-direction: reverse;
+    animation-duration: 45s;
+}
+
+.outer {
+    animation-duration: 90s;
+    font-weight: 100;
+}
+
+.text_ring {
+    position: relative;
+    color: white;
+}
+
+/* .inner .text_ring [style*=--index] {
+    -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+    filter: drop-shadow(0 0 10px white) drop-shadow(0 0 100px white);
+} */
+
+.text_ring [style*=--index] {
+    font-size: min(1.5vw, 24px);
+    position: absolute;
+    transform:
+        translate(50%, 50%)
+        rotate(calc(360deg / var(--total) * var(--index)))
+        translateY(calc(var(--radius, 5) * -1ch));
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
